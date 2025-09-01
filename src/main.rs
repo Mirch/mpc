@@ -1,6 +1,4 @@
 use eframe::egui;
-use std::thread;
-use std::time::Duration;
 
 mod audio_player;
 
@@ -42,7 +40,6 @@ impl eframe::App for MyApp {
                         let index = 3 * (i - 1) + j;
                         if ui.button(format!("\t\t\t\n\t\t\t {index} \n\t\t\t\n")).clicked() {
                             self.player.play_sound(0);
-                            thread::sleep(Duration::from_millis(1500));
                         }
                     }
                 });
